@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0c0c0e;
+  --color-foreground: #ededed;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+body {
+  background-color: #0c0c0e;
+  color: #ededed;
+}
+
+/* Dark mode overwrites for Next-themes */
+.dark body {
+  background-color: #0c0c0e;
+  color: #ededed;
+}
+
+.light body {
+  background-color: #ffffff;
+  color: #121212;
+}
