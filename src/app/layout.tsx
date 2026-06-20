@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./Providers";
 import Navbar from "@/components/Navbar";
+import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-[#0c0c0e] text-white antialiased selection:bg-[#00ff66]/30 selection:text-[#00ff66]`}>
+      <body className={`${inter.className} dark:bg-[#0c0c0e] bg-[#FAF9F6] dark:text-white text-slate-900 antialiased selection:bg-[#00ff66]/30 selection:text-[#00ff66]`}>
         <Providers>
+          <CustomCursor />
           <Navbar />
           <main>{children}</main>
         </Providers>

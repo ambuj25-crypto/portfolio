@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-background: #0c0c0e;
@@ -14,6 +15,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -39,6 +41,12 @@ body {
 }
 
 .light body {
-  background-color: #ffffff;
+  background-color: #f7f1e6;
   color: #121212;
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
 }
