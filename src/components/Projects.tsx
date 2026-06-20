@@ -83,7 +83,7 @@ export default function Projects() {
             </div>
 
             {/* Action Link */}
-            <div className="inline-flex items-center gap-15 mt-auto pt-6 border-t dark:border-white/10 border-slate-300/50">
+            <div className="inline-flex items-centre justify-between mt-auto pt-6 border-t dark:border-white/10 border-slate-300/50">
               <Link
                 href={project.githubLink}
                 className="inline-flex items-center gap-2 dark:text-white text-slate-900 hover:text-[#00ff66] dark:hover:text-[#00ff66] transition-colors font-medium"
