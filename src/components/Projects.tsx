@@ -13,7 +13,9 @@ export default function Projects() {
       description:
         "A comprehensive platform designed to streamline job preparation. It handles advanced resume parsing, calculates dynamic ATS scoring, and generates tailored interview scenarios using generative AI to simulate real-world technical screening.",
       tags: ["React", "Node.js", "MongoDB", "JWT", "Gemini AI", "Puppeteer"],
-      githubLink: "#", // Add real link later
+      githubLink: "https://github.com/ambuj25-crypto/InterviewIQ", 
+      ProjectLink:"https://interviewiq-2507.vercel.app/"
+
     },
     {
       category: "Interactive Dev",
@@ -21,7 +23,8 @@ export default function Projects() {
       description:
         "A highly responsive, grid-based implementation of the classic Snake Game. Features robust collision detection, smooth pointer events for touch devices, and local storage persistence for high scores across sessions.",
       tags: ["Vanilla JavaScript", "HTML5 Canvas", "CSS3", "localStorage"],
-      githubLink: "#", // Add real link later
+      githubLink: "https://github.com/ambuj25-crypto/snake-game2", 
+      ProjectLink:"https://snakegame2507.netlify.app/"
     },
   ];
 
@@ -80,19 +83,37 @@ export default function Projects() {
             </div>
 
             {/* Action Link */}
-            <div className="mt-auto pt-6 border-t dark:border-white/10 border-slate-300/50">
+            <div className="inline-flex items-center gap-15 mt-auto pt-6 border-t dark:border-white/10 border-slate-300/50">
               <Link
                 href={project.githubLink}
                 className="inline-flex items-center gap-2 dark:text-white text-slate-900 hover:text-[#00ff66] dark:hover:text-[#00ff66] transition-colors font-medium"
               >
                 <FaGithub className="w-5 h-5" />
                 View on GitHub
+                 <motion.span
+                   className="inline-block ml-1"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                > 
+                  
+                </motion.span>
+              </Link>
+            {/* </div> */}
+
+            {/* Action Link */}
+            {/* <div className="mt-auto pt-3 border-t dark:border-white/10 border-slate-300/50"> */}
+              <Link
+                href={project.ProjectLink}
+                className="inline-flex items-center gap-2 dark:text-white text-slate-900 hover:text-[#00ff66] dark:hover:text-[#00ff66] transition-colors font-medium"
+              >
+                <FolderGit2 className="w-5 h-5" />
+                Live Project
                 <motion.span
                   className="inline-block ml-1"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  →
+                  
                 </motion.span>
               </Link>
             </div>
