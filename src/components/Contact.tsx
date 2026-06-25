@@ -1,11 +1,35 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, ArrowRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    setName("");
+    setEmail("");
+    setMessage("");
+    setIsSubmitting(false);
+    setIsSuccess(true);
+  };
+
   const socials = [
     { name: "GitHub", icon: <FaGithub className="w-6 h-6" />, href: "https://github.com/ambuj25-crypto" },
     { name: "LinkedIn", icon: <FaLinkedin className="w-6 h-6" />, href: "https://www.linkedin.com/in/ambuj-mishra-b308bb290/?skipRedirect=true" },
@@ -46,13 +70,15 @@ export default function Contact() {
           Drop a message if you vibe
         </h3>
 
-        <form className="flex flex-col gap-8" onSubmit={(e) => e.preventDefault()}>
+        <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
           {/* Input Group */}
           <div className="relative group">
             <input
               type="text"
               required
               placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full bg-transparent border-0 border-b-2 dark:border-white/20 border-black/20 dark:text-white text-slate-900 px-0 py-3 focus:outline-none focus:ring-0 focus:border-[#00ff66] transition-colors peer placeholder-transparent"
             />
             <label className="absolute left-0 -top-3.5 dark:text-gray-500 text-slate-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:dark:text-gray-500 peer-placeholder-shown:text-slate-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#00ff66] peer-focus:text-sm font-mono pointer-events-none">
@@ -65,6 +91,8 @@ export default function Contact() {
               type="email"
               required
               placeholder="Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-transparent border-0 border-b-2 dark:border-white/20 border-black/20 dark:text-white text-slate-900 px-0 py-3 focus:outline-none focus:ring-0 focus:border-[#00ff66] transition-colors peer placeholder-transparent"
             />
             <label className="absolute left-0 -top-3.5 dark:text-gray-500 text-slate-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:dark:text-gray-500 peer-placeholder-shown:text-slate-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#00ff66] peer-focus:text-sm font-mono pointer-events-none">
@@ -77,6 +105,8 @@ export default function Contact() {
               required
               rows={1}
               placeholder="Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="w-full bg-transparent border-0 border-b-2 dark:border-white/20 border-black/20 dark:text-white text-slate-900 px-0 py-3 focus:outline-none focus:ring-0 focus:border-[#00ff66] transition-colors peer placeholder-transparent resize-none overflow-hidden"
             />
             <label className="absolute left-0 -top-3.5 dark:text-gray-500 text-slate-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:dark:text-gray-500 peer-placeholder-shown:text-slate-500 peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[#00ff66] peer-focus:text-sm font-mono pointer-events-none">
@@ -88,14 +118,22 @@ export default function Contact() {
           <div className="mt-8 flex justify-end">
             <button
               type="submit"
-              className="group flex items-center gap-3 dark:text-gray-400 text-slate-600 hover:text-[#00ff66] transition-colors font-mono tracking-widest text-sm uppercase"
+              disabled={isSubmitting}
+              className="group flex items-center gap-3 dark:text-gray-400 text-slate-600 hover:text-[#00ff66] transition-colors font-mono tracking-widest text-sm uppercase disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Initialize Contact
+              {isSubmitting ? "Sending..." : "Initialize Contact"}
               <div className="w-10 h-10 rounded-full border dark:border-white/20 border-black/20 flex items-center justify-center group-hover:border-[#00ff66] group-hover:bg-[#00ff66]/10 transition-all">
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
               </div>
             </button>
           </div>
+
+          {/* Success Notification */}
+          {isSuccess && (
+            <span className="text-[#00FF87] text-sm mt-4 text-right transition-opacity duration-300">
+              Your message has been sent.
+            </span>
+          )}
         </form>
       </div>
     </section>
