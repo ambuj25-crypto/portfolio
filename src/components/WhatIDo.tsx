@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Code2, Database, BrainCircuit, Network } from "lucide-react";
+import { Terminal, Code2, Database, BrainCircuit, Network, User } from "lucide-react";
 
 export default function WhatIDo() {
   const cards = [
     {
-      title: "Full-Stack Web Dev",
-      description: "Building responsive, robust, and scalable web applications.",
-      skills: ["React", "Node.js", "Express", "REST APIs"],
+      title: "Problem Solving",
+      description: "Solved 300+ DSA problems, building strong algorithmic thinking and writing optimized, scalable solutions.",
+      skills: ["C++", "STL", "Algorithms", "Data Structures"],
       icon: <Code2 className="w-8 h-8 text-[#00ff66]" />,
     },
     {
-      title: "GenAI Integration",
-      description: "Infusing applications with cutting-edge AI capabilities.",
-      skills: ["LangChain", "FAISS", "Gemini AI", "RAG Architectures"],
+      title: "Full Stack Development",
+      description: "Building responsive, production-ready web applications using modern frontend and backend technologies.",
+      skills: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "TypeScript"],
       icon: <BrainCircuit className="w-8 h-8 text-[#00ff66]" />,
     },
     {
@@ -24,9 +24,9 @@ export default function WhatIDo() {
       icon: <Database className="w-8 h-8 text-[#00ff66]" />,
     },
     {
-      title: "Machine Learning Pipelines",
-      description: "Developing end-to-end data workflows and predictive models.",
-      skills: ["Scikit-learn", "Pandas", "NumPy", "Kaggle Work"],
+      title: "Freelance & Product Development",
+      description: "Creating modern websites and SaaS-style products with a focus on clean UI, performance, and user experience.",
+      skills: ["Tailwind CSS", "EmailJS", "Vercel", "Render","gemini AI"],
       icon: <Network className="w-8 h-8 text-[#00ff66]" />,
     },
   ];
@@ -35,9 +35,9 @@ export default function WhatIDo() {
     <section id="work" className="relative py-24 px-6 max-w-7xl mx-auto w-full">
       {/* Terminal Title */}
       <div className="flex items-center gap-4 mb-16">
-        <Terminal className="w-8 h-8 dark:text-gray-500 text-slate-500" />
+        <User className="w-8 h-8 dark:text-green-500 text-green-500" />
         <h2 className="text-3xl md:text-4xl font-mono dark:text-white text-slate-900 flex items-center">
-          <span className="text-[#00ff66] mr-2">|</span> what i do
+          <span className="text-[#00ff66] mr-2">|</span> What I'm Known For
           <motion.span
             animate={{ opacity: [1, 0] }}
             transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}

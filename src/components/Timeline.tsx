@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { Briefcase, GraduationCap, Code, Server, BrainCircuit, Activity } from "lucide-react";
+import { Briefcase, GraduationCap, Code, Server, BrainCircuit, Activity, Plane, Bot, TriangleAlert, Database, School, Route } from "lucide-react";
 
 export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,40 +26,54 @@ export default function Timeline() {
 
   const timelineData = [
     {
-      category: "Experience",
-      title: "Full-Stack Web Development",
-      description: "Building full-stack production-ready applications with modern architectures.",
-      icon: <Server className="w-5 h-5 text-gray-900" />,
-      date: "Ongoing",
-    },
-    {
-      category: "Experience",
-      title: "Machine Learning Solutions",
-      description: "Deploying end-to-end ML models and integrating Generative AI pipelines.",
-      icon: <BrainCircuit className="w-5 h-5 dark:text-gray-900 text-white" />,
-      date: "Ongoing",
-    },
-    {
-      category: "Experience",
-      title: "Data Structures & Algorithms",
-      description: "Solving 200+ structural algorithmic problems to optimize logic and efficiency.",
-      icon: <Code className="w-5 h-5 dark:text-gray-900 text-white" />,
-      date: "Ongoing",
-    },
-    {
       category: "Academic Journey",
+      title: "Higher Secondary Education (PCM)",
+      description: "Completed Higher Secondary with Physics, Chemistry, and Mathematics at D.L. English School, achieving 80%. Built a strong analytical and mathematical foundation that sparked my interest in engineering and software development.",
+      icon: <School className="w-5 h-5 text-gray-900" />,
+      date: "2019 – 2021",
+    },
+    {
+      category: "Engineering Begins",
       title: "B.E. Electronics & Telecommunication Engineering",
-      description: "Bangalore Institute of Technology. Focus on core engineering and structural systems.",
-      icon: <GraduationCap className="w-5 h-5 dark:text-gray-900 text-white" />,
-      date: "2023 - 2027",
+      description: "Started my engineering journey at Bangalore Institute of Technology (BIT) after qualifying through COMEDK. While pursuing Electronics & Telecommunication, I gradually discovered my passion for software engineering and modern web technologies.",
+      icon: <BrainCircuit className="w-5 h-5 dark:text-gray-900 text-white" />,
+      date: "2023 – 2027",
     },
     {
-      category: "Academic Journey",
-      title: "Tata GenAI Powered Data Analytics",
-      description: "Job Simulation outlining foundational competencies in Generative AI and Data Analytics.",
-      icon: <Activity className="w-5 h-5 dark:text-gray-900 text-white" />,
-      date: "Completed",
+      category: "Problem Solving Journey",
+      title: "Data Structures & Algorithms",
+      description: "Dedicated a significant part of my engineering journey to mastering Data Structures & Algorithms. Solved 300+ coding problems across multiple platforms, strengthening my understanding of problem-solving, algorithms, and coding interviews.",
+      icon: <Database className="w-5 h-5 dark:text-gray-900 text-white" />,
+      date: "2023 – Present",
     },
+    {
+      category: "Full Stack Development",
+      title: "Modern Web Development",
+      description: "Expanded into Full Stack Development by building scalable applications using React, Next.js, Node.js, Express.js, MongoDB, and TypeScript. Focused on writing clean, maintainable, and production-ready applications.",
+      icon: <TriangleAlert className="w-5 h-5 dark:text-gray-900 text-white" />,
+      date: "2024 – Present",
+    },
+     {
+      category: "AI & Real-World Projects",
+      title: "AI & Software Engineering Projects",
+      description: "Applied my knowledge by developing AI-powered and full-stack applications, including resume analysis platforms, machine learning solutions, and production-ready web applications, combining modern development practices with practical problem solving.",
+      icon: <Bot className="w-5 h-5 dark:text-gray-900 text-white" />,
+      date: "2025 – Present",
+    },
+    {
+      category: "Freelance Experience",
+      title: "Freelance Web Developer",
+      description: "Successfully delivered my first freelance web development project by building a responsive landing page with EmailJS-powered appointment booking, enabling automatic client inquiry emails. Currently exploring and working toward larger freelance opportunities.",
+      icon: < Briefcase className="w-5 h-5 dark:text-gray-900 text-white" />,
+      date: "2026 – Present",
+    },
+    {
+      category: "What's Next",
+      title: "Growing as a Software Engineer",
+      description: "Actively preparing for Software Development Engineer (SDE) roles while expanding expertise in Full Stack Development, AI applications, and building impactful real-world products.",
+      icon: <Plane className="w-5 h-5 dark:text-gray-900 text-white" />,
+      date: "Present",
+    }
   ];
 
   return (
@@ -67,11 +81,11 @@ export default function Timeline() {
       {/* Title */}
       <div className="flex flex-col gap-2 mb-20 text-center">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight dark:text-white text-slate-900 flex justify-center items-center gap-4">
-          <Briefcase className="w-10 h-10 text-[#00ff66]" />
-          Journey & Experience
+          <Route className="w-10 h-10 text-[#00ff66]" />
+          Career Journey
         </h2>
         <p className="dark:text-gray-400 text-slate-600 mt-2 max-w-2xl mx-auto">
-          A track record of continuous learning and hands-on engineering focus.
+          A timeline of my learning, engineering growth, and professional milestones.
         </p>
       </div>
 

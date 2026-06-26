@@ -5,11 +5,11 @@ import { Award, Trophy, Code2 } from "lucide-react";
 
 export default function Achievements() {
   const achievements = [
-    {
-      title: "Active Kaggle Contributor",
-      icon: <Award className="w-8 h-8 text-[#00ff66]" />,
-      description: "Participating in ML challenges and contributing open-source datasets and notebooks.",
-    },
+    // {
+    //   title: "Active Kaggle Contributor",
+    //   icon: <Award className="w-8 h-8 text-[#00ff66]" />,
+    //   description: "Participating in ML challenges and contributing open-source datasets and notebooks.",
+    // },
     {
       title: "8th Place Codeathon Winner",
       icon: <Trophy className="w-8 h-8 text-[#00ff66]" />,

@@ -26,6 +26,25 @@ export default function Projects() {
       githubLink: "https://github.com/ambuj25-crypto/snake-game2", 
       ProjectLink:"https://snakegame2507.netlify.app/"
     },
+    {
+      category: "social media management",
+      title: "BrandPilot AI - Social Media Management Platform",
+      description:
+        "A social media management AI-powered platform centralizes content planning and publishing by allowing users to ask AI-driven content questions to generate ideas and strategies, then set specific times on a unified calendar to schedule and auto-publish posts.",
+      tags: ["Next.js 14+, TypeScript, Tailwind CSS, Supabase, PostgreSQL, Gemini AI, pgvector, Vercel"],
+      githubLink: "https://github.com/ambuj25-crypto/brandpilot-ai", 
+      ProjectLink:"https://brandpilot-ai-socialmedia.vercel.app/"
+    },
+    {
+      category: "cursor pagination",
+      title: "Scalable Product Catalog Backend with Cursor Pagination",
+      description:
+        "A scalable backend solution for managing product catalogs with efficient cursor-based pagination of almost 20k+ products.",
+      tags: ["Node.js, Express, PostgreSQL (Neon), and Prisma"],
+      githubLink: "https://github.com/ambuj25-crypto/cursor-pagination", 
+      ProjectLink:"https://cursor-pagination-self.vercel.app/"
+    }
+
   ];
 
   return (
