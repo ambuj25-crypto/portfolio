@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, ArrowRight } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Mail, ArrowRight, CircleFadingPlus } from "lucide-react";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Contact() {
@@ -34,6 +34,7 @@ export default function Contact() {
     { name: "GitHub", icon: <FaGithub className="w-6 h-6" />, href: "https://github.com/ambuj25-crypto" },
     { name: "LinkedIn", icon: <FaLinkedin className="w-6 h-6" />, href: "https://www.linkedin.com/in/ambuj-mishra-b308bb290/?skipRedirect=true" },
     { name: "Email", icon: <Mail className="w-6 h-6" />, href: "mailto:ambujmishra2507@gmail.com" },
+    { name: "Instagram", icon: <FaInstagram className="w-6 h-6" />, href: "https://www.instagram.com/buildwithambuj?igsh=ZTAyenRmNjFod2xl" },
   ];
 
   return (
